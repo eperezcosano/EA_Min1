@@ -9,4 +9,12 @@ function getSubjects(req:Request, res:Response): void {
     })
 }
 
-export default { getSubjects }
+function getStudentsfromSubject(req:Request, res:Response): void {
+    Subject.find({"name": req.params.name}).populate("students").then((data) => {
+        res.status(200).json(data);
+    }).catch((err) => {
+        res.status(500).json(err);
+    })
+}
+
+export default { getSubjects, getStudentsfromSubject }
