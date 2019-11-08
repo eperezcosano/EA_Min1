@@ -2,11 +2,14 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import router from './routes/index';
+import cors from 'cors';
 
 const port: number = 3000;
 const MONGO_URI: string = 'mongodb://localhost/ea_min1';
 const app: express.Application = express();
 
+app.use(cors());
+app.options('*',cors());
 app.use( express.json() );
 app.use( '', router );
 app.use( bodyParser.json() );
