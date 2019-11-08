@@ -1,6 +1,9 @@
 # EA_Min1
 ---
 
+### Screen shot
+![frontend](https://user-images.githubusercontent.com/7610219/68511140-8ee4a600-0275-11ea-9bd8-d5b3d5029f79.png)
+
 ### Table of Contents
 
 - [Models](#models)
@@ -10,13 +13,23 @@
 
 ## Models
 
-##### StudentService schema
+##### Student schema
 
 ```typescript
-const UserSchema: Schema = new Schema({
-    email: { type: String, required: true, unique: true },
+const StudentSchema: Schema = new Schema({
     name: { type: String, required: true },
-    pass: { type: String, required: true }
+    address: { type: String, required: true },
+    phones: { type: Array, required: true },
+    studies: { type: Array, required: true }
+});
+```
+
+##### Subject schema
+
+```typescript
+const SubjectSchema: Schema = new Schema({
+    name: { type: String, required: true },
+    students: [{ type: Schema.Types.ObjectId, ref: 'Student' }]
 });
 ```
 
@@ -24,9 +37,11 @@ const UserSchema: Schema = new Schema({
 
 | Model | Type | Routes | Description |
 | :---:| :---: | --- | --- |
-| USER | GET | /user | Get all users |
-|  | GET | /user/**:id** | Get the detail of a user |
-
+| STUDENT | GET | /student/telematics | Get telematics students |
+|  | GET | /students/systems | Get systems in telecomunications students |
+|  | GET | /students/aeros | Get aerospacial students |
+| SUBJECT | GET | /subjects/ | Get all subjects |
+|  | GET | /subjects/**:name** | Get students studying a subject |
 #### Technologies
 
 - node.js
