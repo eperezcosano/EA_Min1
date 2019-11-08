@@ -1,12 +1,8 @@
-import { Router, Request, Response, NextFunction } from 'express';
-import userRouter from './user';
+import { Router } from 'express';
+import studentRouter from './student';
 
 const router: Router = Router();
 
-router.get('/', function (req, res) {
-    res.send('Hello World Index!');
-});
-
-router.use('/user', userRouter);
+router.use('/students', studentRouter);
 
 export default router;
