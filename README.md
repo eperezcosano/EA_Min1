@@ -1,8 +1,8 @@
 # EA_Min1
 ---
 
-### Screen shot
-![frontend](https://user-images.githubusercontent.com/7610219/68511140-8ee4a600-0275-11ea-9bd8-d5b3d5029f79.png)
+### Screenshot
+<img src="https://user-images.githubusercontent.com/7610219/68511140-8ee4a600-0275-11ea-9bd8-d5b3d5029f79.png" width="150"> 
 
 ### Table of Contents
 
