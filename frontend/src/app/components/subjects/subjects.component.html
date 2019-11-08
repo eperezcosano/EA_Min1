@@ -2,9 +2,8 @@
 <ul>
   <li *ngFor="let subject of subjects">
     {{ subject.name }}
-    {{ getStudentsFromSubj(subject.name) }}
     <ul>
-      <li *ngFor="let student of students">
+      <li *ngFor="let student of subject.students">
         {{ student.name }}
       </li>
     </ul>

@@ -21,9 +21,9 @@ export class SubjectService {
     return this.http.get<Subject[]>(this.environment.urlSubject);
   }
 
-  getStudentsFromSubject(subject): Observable<Student[]> {
-  console.log(this.environment.urlSubject);
-  return this.http.get<Student[]>(this.environment.urlSubject+'/'+subject);
+  getStudentsFromSubject(subject): Observable<Subject> {
+    console.log(this.environment.urlSubject);
+    return this.http.get<Subject>(this.environment.urlSubject+'/'+subject);
   }
 
 }
