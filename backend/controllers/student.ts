@@ -25,4 +25,21 @@ function getStudentsAeros(req:Request, res:Response): void {
     })
 }
 
-export default { getStudentsTelematics, getStudentsSystems, getStudentsAeros }
+function getAll(req:Request, res:Response): void {
+    Student.find({}).then((data) => {
+        res.status(200).json(data);
+    }).catch((err) => {
+        res.status(500).json(err);
+    })
+}
+
+function getStudentByName(req:Request, res:Response): void {
+    let name: string = req.params.name;
+    Student.find({name: name}).then((data) => {
+        res.status(200).json(data);
+    }).catch((err) => {
+        res.status(500).json(err);
+    })
+}
+
+export default { getStudentsTelematics, getStudentsSystems, getStudentsAeros, getAll, getStudentByName }
