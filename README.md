@@ -1,6 +1,9 @@
 # EA_Min1
 ---
 
+A simple Angular and NodeJS project to put in practice a easy front-end to get data access from a MongoDB through NodeJS.
+
+
 ### Screenshot
 <img src="https://user-images.githubusercontent.com/7610219/68511140-8ee4a600-0275-11ea-9bd8-d5b3d5029f79.png" width="150"> 
 
